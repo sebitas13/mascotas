@@ -8,6 +8,7 @@ router.post('/users', async(req, res)=>{
     try {
         const user = userSchema(req.body);
         const newUser = await user.save();
+        console.log(newUser);
         res.status(200).json(newUser);
     } catch (error) {
         res.json({message:error})
